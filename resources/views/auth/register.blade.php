@@ -61,6 +61,18 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label class="col-md-4 col-form-label text-md-end">Tipo de cuenta</label>
+
+                            <div class="col-md-6">
+                                <select class="form-select" name="admin">
+                                    <option>Seleccionar rol</option>
+                                    <option value=1>Administrador</option>
+                                    <option value=0>Invitado</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
