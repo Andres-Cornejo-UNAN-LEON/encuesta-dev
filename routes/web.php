@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\prueba;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
