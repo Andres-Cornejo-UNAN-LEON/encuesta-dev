@@ -52,7 +52,7 @@ class UsuarioSeeders extends Seeder
                 "email" => "usuarioprueba@gmail.com",
                 "email_verified_at" => new DateTime(),
                 "admin" => 0,
-                "password" => Hash::make("password1234"),
+                "password" => Hash::make("passwd1234"),
                 "created_at" => new DateTime(),
                 "updated_at" => new DateTime()
             ]
