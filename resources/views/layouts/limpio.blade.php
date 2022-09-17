@@ -16,7 +16,18 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body  style="background-color: #020122">
+<body  style="width: 1685px; background-color: #020122;">
+    <ul class="nav justify-content-center" id="encabezado-layout">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/register">Registrarse</a>
+        </li>
+      </ul>
     <div id="app-clear">
         <main>
             @yield('content')

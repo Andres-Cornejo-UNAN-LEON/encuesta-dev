@@ -10,7 +10,7 @@
                 <input id="input-email" type="email" name="email" class="ingreso-datos" placeholder="email.example@gmail.com" required autocomplete="email" autofocus>
             </div>
             <div class="row">
-                <input type="password" id="input-contra" class="ingreso-datos" placeholder="Password" name="password" required autocomplete="current-password">
+                <input type="password" id="input-contra" class="ingreso-datos" placeholder="password" name="password" required autocomplete="current-password">
             </div>
             <div class="row">
                 <span><input type="checkbox" name="mostrar-password" id="check-contra"><label for="check-contra">Mostrar contraseña</label></span>
@@ -23,7 +23,6 @@
             </div>
         </form>
     </div>
-    <a href="/register" type="button" id="button-registrarse">Registrarse</a>
 </div>
 <div class="clear-fix"></div>
 
