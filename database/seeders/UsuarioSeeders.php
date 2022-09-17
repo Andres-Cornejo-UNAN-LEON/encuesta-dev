@@ -37,16 +37,16 @@ class UsuarioSeeders extends Seeder
                 "password" => Hash::make("password"),
                 "created_at" => new DateTime(),
                 "updated_at" => new DateTime()
-            ],
+            ],*/
             [   //Usuario Marcelo
-                "name" => "",
-                "email" => "",
+                "name" => "Marcelo Zepeda",
+                "email" => "marcelozepeda749@gmail.com",
                 "email_verified_at" => new DateTime(),
                 "admin" => 1,
-                "password" => Hash::make("password"),
+                "password" => Hash::make("marsoza11"),
                 "created_at" => new DateTime(),
                 "updated_at" => new DateTime()
-            ],*/
+            ],
             [   //Usuario Invitado(Para pruebas)
                 "name" => "Usuario prueba",
                 "email" => "usuarioprueba@gmail.com",

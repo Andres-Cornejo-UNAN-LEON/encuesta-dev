@@ -1,89 +1,38 @@
-@extends('layouts.app')
+@extends('layouts.limpio')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label class="col-md-4 col-form-label text-md-end">Tipo de cuenta</label>
-
-                            <div class="col-md-6">
-                                <select class="form-select" name="admin">
-                                    <option>Seleccionar rol</option>
-                                    <option value=1>Administrador</option>
-                                    <option value=0>Invitado</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<div class="card" id="caja-login">
+    <span id="encabezado-sesion"><h3>REGISTRAR</h3></span>
+    <span id="sub-encabezado-sesion"><h4><small>Ingrese sus datos para poder<br>registrarse en la app encuesta</small></h4></span>
+    <div class="row">
+        <form method="POST" action="{{ route('register') }}" id="formulario-login">@csrf
+            <div class="row">
+                <input id="input-email" type="text" name="name" class="ingreso-datos" placeholder="nombre completo" required autocomplete="name" autofocus>
             </div>
-        </div>
+            <div class="row">
+                <input id="input-email" type="email" name="email" class="ingreso-datos" placeholder="email.example@gmail.com" required autocomplete="email">
+            </div>
+            <div class="row">
+                <select class="form-select ingreso-datos" name="admin">
+                    <option>Seleccionar rol</option>
+                    <option value=1>Administrador</option>
+                    <option value=0>Invitado</option>
+                </select>
+            </div>
+            <div class="row">
+                <input type="password" id="input-contra" class="ingreso-datos" placeholder="password" name="password" required autocomplete="new-password">
+            </div>
+            <div class="row">
+                <input type="password" id="input-new-contra" class="ingreso-datos" placeholder="confirm password" name="password_confirmation" required autocomplete="new-password">
+            </div>
+            <div class="row">
+                <span><input type="checkbox" name="mostrar-password" id="check-contra"><label for="check-contra">Mostrar contraseña</label></span>
+            </div>
+            <div class="row">
+                <button id="button-ingresar" type="submit">Ingresar</button>
+            </div>
+        </form>
     </div>
 </div>
+<div class="clear-fix"></div>
 @endsection

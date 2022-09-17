@@ -1,0 +1,21 @@
+#encabezado-layout{
+    background-color: $color-azul;
+    border-bottom: solid 1px $color-gris-claro;
+    height: 70px;
+    li{
+        width: 8%;
+        a{
+            text-align: center;
+            line-height: 50px;
+            border-bottom: solid 5px transparent;
+            text-decoration: none;
+            color: $color-gris-claro;
+        }
+    }
+    li:hover{
+        a{
+            color: $color-naranja;
+            border-bottom: solid 5px $color-naranja;
+        }
+    }
+}
