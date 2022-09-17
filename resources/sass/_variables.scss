@@ -1,7 +1,25 @@
 // Body
 $body-bg: #f8fafc;
+$color-azul-claro: #E5EAFA;
+$color-gris-claro: #707070;
+$color-azul: #020122;
+$color-naranja: #BF4E30;
 
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+@mixin sombra($color) {
+    -webkit-box-shadow: 0px 0px 152px -5px $color;
+    -moz-box-shadow: 0px 0px 152px -5px $color;
+    box-shadow: 0px 0px 152px -5px $color;
+}
+
+body{
+    width: 1685px;
+}
+#app-clear{
+    margin-top: 50px;
+    background-color: $color-azul;
+}

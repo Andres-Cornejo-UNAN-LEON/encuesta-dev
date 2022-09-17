@@ -1,0 +1,65 @@
+#caja-login{
+    background-color: $color-azul;
+    #encabezado-sesion, #sub-encabezado-sesion{
+        width: 100%;
+        text-align: center;
+        color: $color-azul-claro;
+        margin: 20px auto;
+    }
+    #sub-encabezado-sesion{
+        color: $color-gris-claro;
+    }
+    #formulario-login{
+        width: 600px;
+        height: 470px;
+        margin: 0px auto;
+        .ingreso-datos{
+            width: 550px;
+            height: 50px;
+            border-radius: 200px;
+            background-color: $color-azul;
+            border: solid 2px $color-gris-claro;
+            margin: 23px auto;
+            color: $color-naranja;
+            padding: 0px 20px;
+            font-size: 16px;
+        }
+        .ingreso-datos:hover{
+            border: solid 2px $color-naranja;
+        }
+        span{
+            color: $color-gris-claro;
+            font-size: 14px;
+            width: 400px;
+        }
+        #check-contra, #recordar-contra{
+            margin: 10px auto;
+            width: 80px;
+        }
+        #button-ingresar{
+            width: 550px;
+            height: 50px;
+            background-color: $color-naranja;
+            color: $color-azul;
+            border-radius: 200px;
+            font-size: 20px;
+            margin: 54px auto 20px auto;
+        }
+    }
+    #button-registrarse{
+        color: $color-naranja;
+        font-size: 16px;
+        text-align: center;
+        margin: 0px auto;
+        text-decoration: none;
+        width: 550px;
+        height: 50px;
+        line-height: 50px;
+        border: solid 2px transparent;
+        border-radius: 200px;
+    }
+    #button-registrarse:hover{
+        border: solid 2px $color-naranja;
+        @include sombra($color-naranja);
+    }
+}
