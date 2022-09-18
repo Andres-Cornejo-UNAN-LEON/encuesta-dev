@@ -7,5 +7,7 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 @import 'layout/layout';
+@import 'layout/principal'; 
+@import 'login/home';
 
-@import 'login/inicioSession'
+@import 'login/inicioSession';

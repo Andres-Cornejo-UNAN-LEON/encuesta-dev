@@ -1,0 +1,14 @@
+#caja-bienvenido{
+    width: 800px;
+    margin: 300px 200px;
+    #tarjeta{
+        text-align: center;
+        #cuerpo-tarjeta{
+            text-align: left;
+            padding-left: 100px;
+        }
+    }
+    h1{
+        color: $color-naranja;
+    }
+}
