@@ -25,7 +25,7 @@ class UsuarioSeeders extends Seeder
                 "email" => "andrescornejolira@gmail.com",
                 "email_verified_at" => new DateTime(),
                 "admin" => 1,
-                "password" => Hash::make("Gaviota13"),
+                "password" => Hash::make("ACL130901"),
                 "created_at" => new DateTime(),
                 "updated_at" => new DateTime()
             ],/*

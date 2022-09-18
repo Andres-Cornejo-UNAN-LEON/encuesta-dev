@@ -26,10 +26,10 @@
                 <button id="logout">Cerrar sesion</button>
             </form>
         </span>
-        <form action="" method="post">@csrf
-            <input type="text" placeholder="Buscar una pregunta" name="search_question" id="search-question">
-        </form>
         @if (Auth::user()->admin)
+            <form action="" method="post">@csrf
+                <input type="text" placeholder="Buscar una pregunta" name="search_question" id="search-question">
+            </form>
             <div class="row">
                 <a href="#">Preguntas</a>
             </div>
