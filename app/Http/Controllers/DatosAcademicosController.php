@@ -15,7 +15,10 @@ class DatosAcademicosController extends Controller
      */
     public function index()
     {
-        //
+        $user = DatosAcademicos::find(8);
+        $nombreCompleto = $user->generales->nombre . " " . $user->generales->apellido;
+        $cedula = $user->generales->cedula;
+        return view('prueba')->with('datos', $user)->with("nombreCompleto", $nombreCompleto)->with("cedula", $cedula);
     }
 
     /**

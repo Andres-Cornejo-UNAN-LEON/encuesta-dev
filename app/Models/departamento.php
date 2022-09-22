@@ -10,4 +10,10 @@ class departamento extends Model
     use HasFactory;
 
     Protected $fillable = ["nombre"];
+    public function generales(){
+        return $this->hasMany(DatosGenerales::class, "IdDepartamento");
+    }
+    public function municipio(){
+        return $this->belongsTo(municipio::class, "IdDepartamento");
+    }
 }

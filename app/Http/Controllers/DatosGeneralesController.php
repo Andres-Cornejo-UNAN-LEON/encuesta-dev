@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DatosGenerales;
 use App\Http\Requests\StoreDatosGeneralesRequest;
 use App\Http\Requests\UpdateDatosGeneralesRequest;
+use App\Models\sexo;
 
 class DatosGeneralesController extends Controller
 {
@@ -36,7 +37,8 @@ class DatosGeneralesController extends Controller
      */
     public function store(StoreDatosGeneralesRequest $request)
     {
-        //
+        DatosGenerales::created($request->all());
+        return response("200", "Datos almacenado correctamente");
     }
 
     /**

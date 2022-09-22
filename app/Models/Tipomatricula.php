@@ -9,4 +9,8 @@ class Tipomatricula extends Model
 {
     use HasFactory;
     Protected $fillable = ["tipo"];
+
+    public function academicos(){
+        return $this->hasMany(DatosAcademicos::class, "IdTipomatricula");
+    }
 }

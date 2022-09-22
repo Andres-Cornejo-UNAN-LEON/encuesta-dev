@@ -1,8 +1,13 @@
 <?php
 
 use App\Http\Controllers\prueba;
+use App\Models\DatosGenerales;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DatosGeneralesController;
+use App\Http\Controllers\DatosAcademicosController;
+use App\Http\Controllers\ResultadoEncuestaController;
+use App\Models\DatosAcademicos;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +35,7 @@ Route::get('/layout-main/prueba', function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('DatosGenerales', DatosGeneralesController::class);
+
+Route::get('/prueba', [ResultadoEncuestaController::class, 'index']);

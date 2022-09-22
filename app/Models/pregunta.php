@@ -9,4 +9,8 @@ class pregunta extends Model
 {
     use HasFactory;
     Protected $fillable = ["nombre", "Tipopregunta"];
+    
+    public function encuesta(){
+        return $this->hasmany(ResultadoEncuesta::class, "IdPregunta");
+    }
 }

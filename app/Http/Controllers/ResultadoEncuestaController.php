@@ -15,7 +15,8 @@ class ResultadoEncuestaController extends Controller
      */
     public function index()
     {
-        //
+        $encuestas = ResultadoEncuesta::where("IdEncuestado", 1)->get();
+        return dd($encuestas);
     }
 
     /**

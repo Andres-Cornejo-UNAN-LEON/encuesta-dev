@@ -20,24 +20,32 @@
     <div class="caja-main" id="barra-lateral">
         <span id="datos-generales">
             <img src="https://image.shutterstock.com/image-vector/thin-line-user-icon-on-260nw-519039097.jpg" alt="user">
-            <h3>{{ Auth::user()->name }}</h3>
-            <h4><small class="text-muted">{{ Auth::user()->email}}</small></h4>
-            <form action="{{ route('logout') }}" method="POST">@csrf
-                <button id="logout">Cerrar sesion</button>
-            </form>
+            @if (Auth::check())
+                <h3>{{ Auth::user()->name }}</h3>
+                <h4><small class="text-muted">{{ Auth::user()->email}}</small></h4>
+            @else
+                <h3>{{ $nombreCompleto }}</h3>
+                <h4><small class="text-muted">{{ $cedula}}</small></h4>
+            @endif
+            @if (Auth::check())
+                <form action="{{ route('logout') }}" method="POST">@csrf
+                    <button id="logout">Cerrar sesion</button>
+                </form>
+            @endif
         </span>
-        @if (Auth::user()->admin)
-            <form action="" method="post">@csrf
-                <input type="text" placeholder="Buscar una pregunta" name="search_question" id="search-question">
-            </form>
+        @if (Auth::check())
+            @if (Auth::user()->admin)
+                <form action="" method="post">@csrf
+                    <input type="text" placeholder="Buscar una pregunta" name="search_question" id="search-question">
+                </form>
+                <div class="row">
+                    <a href="#">Preguntas</a>
+                </div>
+            @endif
             <div class="row">
-                <a href="#">Preguntas</a>
+                <a href="#">Reporte de encuesta</a>
             </div>
         @endif
-        <div class="row">
-            <a href="#">Reporte de encuesta</a>
-        </div>
-        
     </div>
     <div class="caja-main" id="contenido-app-main">
         @yield('content')

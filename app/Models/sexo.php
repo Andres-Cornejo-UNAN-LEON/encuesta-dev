@@ -10,4 +10,8 @@ class sexo extends Model
     use HasFactory;
 
     Protected $fillable = ["genero"];
+
+    public function generales(){
+        return $this->hasMany(DatosGenerales::class, "IdSexo");
+    }
 }

@@ -20,15 +20,15 @@ class DatosAcademicosSeeder extends Seeder
         DB::table('datos_academicos')->truncate();
         DB::table('datos_academicos')->insert([
                 ['IdFacultad'=>'1','IdCarrera'=>'2','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'1','IdDatosgenerales'=>'1', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'1','IdCarrera'=>'2','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'1','IdDatosgenerales'=>'2', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'3','IdCarrera'=>'1','anio'=>'2','IdTipomatricula'=>'2','IdBecado'=>'2','IdDatosgenerales'=>'3', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'4','IdCarrera'=>'2','anio'=>'2','IdTipomatricula'=>'2','IdBecado'=>'2','IdDatosgenerales'=>'4', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'5','IdCarrera'=>'4','anio'=>'2','IdTipomatricula'=>'3','IdBecado'=>'1','IdDatosgenerales'=>'5', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'1','IdCarrera'=>'1','anio'=>'3','IdTipomatricula'=>'2','IdBecado'=>'3','IdDatosgenerales'=>'6', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'1','IdCarrera'=>'2','anio'=>'4','IdTipomatricula'=>'3','IdBecado'=>'2','IdDatosgenerales'=>'7', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'2','IdCarrera'=>'3','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'2','IdDatosgenerales'=>'8', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'3','IdCarrera'=>'1','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'3','IdDatosgenerales'=>'9', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
-                ['IdFacultad'=>'4','IdCarrera'=>'1','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'3','IdDatosgenerales'=>'10', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()]
+                ['IdFacultad'=>'1','IdCarrera'=>'4','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'1','IdDatosgenerales'=>'2', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
+                ['IdFacultad'=>'3','IdCarrera'=>'23','anio'=>'2','IdTipomatricula'=>'2','IdBecado'=>'2','IdDatosgenerales'=>'3', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
+                ['IdFacultad'=>'4','IdCarrera'=>'31','anio'=>'2','IdTipomatricula'=>'2','IdBecado'=>'2','IdDatosgenerales'=>'4', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
+                ['IdFacultad'=>'5','IdCarrera'=>'39','anio'=>'2','IdTipomatricula'=>'3','IdBecado'=>'1','IdDatosgenerales'=>'5', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
+                ['IdFacultad'=>'1','IdCarrera'=>'2','anio'=>'3','IdTipomatricula'=>'2','IdBecado'=>'3','IdDatosgenerales'=>'6', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
+                ['IdFacultad'=>'1','IdCarrera'=>'3','anio'=>'4','IdTipomatricula'=>'3','IdBecado'=>'2','IdDatosgenerales'=>'7', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
+                ['IdFacultad'=>'2','IdCarrera'=>'11','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'2','IdDatosgenerales'=>'8', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
+                ['IdFacultad'=>'3','IdCarrera'=>'19','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'3','IdDatosgenerales'=>'9', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()],
+                ['IdFacultad'=>'4','IdCarrera'=>'30','anio'=>'1','IdTipomatricula'=>'1','IdBecado'=>'3','IdDatosgenerales'=>'10', 'created_at'=>new DateTime(), 'updated_at'=>new DateTime()]
                 
             ]
         );

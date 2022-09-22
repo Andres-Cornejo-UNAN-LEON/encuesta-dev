@@ -9,4 +9,10 @@ class Facultad extends Model
 {
     use HasFactory;
     Protected $fillable = ["nombre"];
+    public function carrera(){
+        return $this->belongsTo(Carrera::class, "IdFacultad");
+    }
+    public function academicos(){
+        return $this->hasMany(DatosAcademicos::class, "IdFacultad");
+    }
 }

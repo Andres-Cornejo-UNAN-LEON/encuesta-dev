@@ -9,4 +9,8 @@ class Becado extends Model
 {
     use HasFactory;
     Protected $fillable = ["Tipobecado"];
+    
+    public function academicos(){
+        return $this->hasMany(DatosAcademicos::class, "IdBecado");
+    }
 }
