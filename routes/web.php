@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AplicacionController;
 use App\Http\Controllers\prueba;
 use App\Models\DatosGenerales;
 use Illuminate\Support\Facades\Route;
@@ -39,3 +40,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('DatosGenerales', DatosGeneralesController::class);
 
 Route::get('/prueba', [ResultadoEncuestaController::class, 'index']);
+Route::get('/reporte', [AplicacionController::class, 'reporte']);
+

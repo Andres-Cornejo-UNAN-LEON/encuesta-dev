@@ -13,8 +13,15 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!-- Libreria de chart.js para las graficass -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body  style="width: 1685px; background-color: #E5EAFA;">
     <div class="caja-main" id="barra-lateral">
@@ -43,7 +50,7 @@
                 </div>
             @endif
             <div class="row">
-                <a href="#">Reporte de encuesta</a>
+                <a href="/reporte">Reporte de encuesta</a>
             </div>
         @endif
     </div>
