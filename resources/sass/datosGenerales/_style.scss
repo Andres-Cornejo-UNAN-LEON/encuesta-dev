@@ -1,0 +1,24 @@
+.form-datosGenerales{
+    width: 100%;
+    background-color: #ffffff;
+
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        .form-control{
+            display: flex;
+            flex-direction: column;
+            label{
+                font-family: sans-serif;
+            }
+            input, select{
+                border-radius: 12px;
+                border:1px #000000 solid;
+            }
+        }
+    }
+
+}

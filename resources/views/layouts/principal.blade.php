@@ -16,7 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body  style="width: 1685px; background-color: #E5EAFA;">
+<body  style="width: 100%; background-color: #E5EAFA;">
     <div class="caja-main" id="barra-lateral">
         <span id="datos-generales">
             <img src="https://image.shutterstock.com/image-vector/thin-line-user-icon-on-260nw-519039097.jpg" alt="user">

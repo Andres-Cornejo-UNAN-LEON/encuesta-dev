@@ -6,6 +6,9 @@ use App\Models\DatosGenerales;
 use App\Http\Requests\StoreDatosGeneralesRequest;
 use App\Http\Requests\UpdateDatosGeneralesRequest;
 use App\Models\sexo;
+use App\Models\departamento;
+use App\Models\municipio;
+use Illuminate\Http\Request;
 
 class DatosGeneralesController extends Controller
 {
@@ -17,6 +20,10 @@ class DatosGeneralesController extends Controller
     public function index()
     {
         //
+        $sexo = Sexo::all();
+        $departamento = departamento::all();
+
+        return View('DatosGenerales.DatosGenerales', compact('sexo', 'departamento'));
     }
 
     /**
@@ -24,9 +31,18 @@ class DatosGeneralesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $data)
     {
         //
+        $datos = DatosGenerales::create([
+            'cedula' => $data->input('cedula'),
+            'nombre' => $data->input('nombre'),
+            'apellido' => $data->input('apellido'),
+            'IdSexo' => $data->input('IdSexo'),
+            'IdDepartamento' => $data->input('IdDepartamento'),
+            'IdMunicipio' => $data->input('IdMunicipio'),
+        ]);
+        return view('DatosAcademicos.DatosAcademicos');
     }
 
     /**

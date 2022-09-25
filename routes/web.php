@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DatosGeneralesController;
 use App\Http\Controllers\DatosAcademicosController;
 use App\Http\Controllers\ResultadoEncuestaController;
+use App\Http\Controllers\municipioController;
+use App\Http\Controllers\preguntaController;
 use App\Models\DatosAcademicos;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +41,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('DatosGenerales', DatosGeneralesController::class);
 
+Route::resource('DatosAcademicos', DatosAcademicosController::class);
+
 Route::get('/prueba', [ResultadoEncuestaController::class, 'index']);
+
+Route::get('/municipio/show/{IdDepartamento}', [municipioController::class,'show']);
+
+Route::get('/pregunta', [preguntaController::class, 'index']);
+
+Route::post('/DatosGenerales', [DatosGeneralesController::class, 'create'])->name('DatosGenerales.create');
+
+Route::post('/DatosAcademicos', [DatosAcademicosController::class, 'create'])->name('DatosAcademicos.create');

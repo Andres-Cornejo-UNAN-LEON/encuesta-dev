@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\DatosAcademicos;
 use App\Http\Requests\StoreDatosAcademicosRequest;
 use App\Http\Requests\UpdateDatosAcademicosRequest;
+use App\Models\Facultad;
+use App\Models\Becado;
+use App\Models\Tipomatricula;
+use App\Models\DatosGenerales;
+use Illuminate\Http\Request;
 
 class DatosAcademicosController extends Controller
 {
@@ -15,10 +20,12 @@ class DatosAcademicosController extends Controller
      */
     public function index()
     {
-        $user = DatosAcademicos::find(8);
-        $nombreCompleto = $user->generales->nombre . " " . $user->generales->apellido;
-        $cedula = $user->generales->cedula;
-        return view('prueba')->with('datos', $user)->with("nombreCompleto", $nombreCompleto)->with("cedula", $cedula);
+        $ultimo = DatosGenerales::select("id")->latest()->first();
+        $facultad = Facultad::all();
+        $beca = Becado::all();
+        $tipoMat = Tipomatricula::all();
+
+        return view('DatosAcademicos.DatosAcademicos', compact('ultimo','facultad', 'beca', 'tipoMat'));
     }
 
     /**
@@ -26,9 +33,18 @@ class DatosAcademicosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $data)
     {
-        //
+        $datos = DatosAcademicos::create([
+            'IdDatosgenerales' => $data->input('IdDatosgenerales'),
+            'IdFacultad' => $data->input('IdFacultad'),
+            'IdCarrera' => $data->input('IdCarrera'),
+            'anio' => $data->input('anio'),
+            'IdTipomatricula' => $data->input('IdTipomatricula'),
+            'IdBecado' => $data->input('IdBecado'),
+        ]);
+        return view('DatosAcademicos.DatosAcademicos');
+      
     }
 
     /**
