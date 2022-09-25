@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DatosAcademicos;
+use App\Exports\DatosEncuestaExport;
+use App\Exports\PersonasEncustadasExport;
 use App\Models\pregunta;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\ResultadoEncuesta;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,5 +43,11 @@ class AplicacionController extends Controller
             $respuestas[] = array_count_values($datos);
         }
         return view('reporte.graficas')->with("preguntas", json_encode($preguntas))->with("respuestas", json_encode($respuestas));
+    }
+    public function exportEncuesta(){
+        return Excel::download(new DatosEncuestaExport, 'Datos encuesta.xlsx');
+    }
+    public function exportEncuestados(){
+        return Excel::download(new PersonasEncustadasExport, 'Datos personales encuestados.xlsx');
     }
 }

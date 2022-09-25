@@ -57,4 +57,6 @@ Route::post('/DatosAcademicos', [DatosAcademicosController::class, 'create'])->n
 Route::controller(AplicacionController::class)->group(function(){
     Route::get('/graficas', 'graficas');
     Route::get('/reporte', 'informe');
+    Route::get('/download/Excel/Encuesta', 'exportEncuesta');
+    Route::get('/download/Excel/Encuestados', 'exportEncuestados');
 });
