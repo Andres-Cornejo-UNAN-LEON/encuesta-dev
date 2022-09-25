@@ -3,8 +3,8 @@
     float: left;
 }
 #barra-lateral{
-    width: 400px;
-    height: 1000px;
+    width: 25%;
+    min-height: 100vh;
     background-color: $color-azul;
     color: $color-azul-claro;
     #datos-generales{
@@ -64,4 +64,11 @@
         background-color: $color-rojo;
         color: $color-azul-claro;
     }
+}
+#contenido-app-main{
+    width: 75%;
+    height: 100vh;
+    padding: 100px 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }

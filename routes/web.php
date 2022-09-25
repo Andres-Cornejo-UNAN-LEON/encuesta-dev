@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AplicacionController;
 use App\Http\Controllers\prueba;
 use App\Models\DatosGenerales;
 use Illuminate\Support\Facades\Route;
@@ -52,3 +53,5 @@ Route::get('/pregunta', [preguntaController::class, 'index']);
 Route::post('/DatosGenerales', [DatosGeneralesController::class, 'create'])->name('DatosGenerales.create');
 
 Route::post('/DatosAcademicos', [DatosAcademicosController::class, 'create'])->name('DatosAcademicos.create');
+
+Route::get('/reporte', [AplicacionController::class, 'reporte']);
