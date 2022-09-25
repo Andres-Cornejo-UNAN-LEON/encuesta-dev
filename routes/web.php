@@ -54,4 +54,7 @@ Route::post('/DatosGenerales', [DatosGeneralesController::class, 'create'])->nam
 
 Route::post('/DatosAcademicos', [DatosAcademicosController::class, 'create'])->name('DatosAcademicos.create');
 
-Route::get('/reporte', [AplicacionController::class, 'reporte']);
+Route::controller(AplicacionController::class)->group(function(){
+    Route::get('/graficas', 'graficas');
+    Route::get('/reporte', 'informe');
+});

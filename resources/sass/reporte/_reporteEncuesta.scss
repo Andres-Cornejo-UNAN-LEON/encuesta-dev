@@ -1,0 +1,37 @@
+h2{
+    text-align: center;
+    color: $color-azul;
+}
+hr{
+    width: 30%;
+    margin: 25px auto 150px auto;
+    height: 1px;
+}
+.tarjeta_informe{
+    display: block;
+    float: left;
+    width: 30%;
+    margin: 0px 1.5%;
+    height: 150px;
+    border-radius: 10px;
+    border: solid 1px black;
+    h4{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .button_export{
+        display: block;
+        float: left;
+        background-color: $color-blanco;
+        border: solid 1px $color-verde;
+        text-decoration: none;
+        color: $color-verde;
+        font-size: large;
+        margin: 30px auto 10px auto;
+        width: 60%;
+    }
+    .button_export:hover{
+        background-color: $color-verde;
+        color: $color-blanco;
+    }
+}
