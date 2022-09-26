@@ -20,12 +20,8 @@ class DatosAcademicosController extends Controller
      */
     public function index()
     {
-        $ultimo = DatosGenerales::select("id")->latest()->first();
-        $facultad = Facultad::all();
-        $beca = Becado::all();
-        $tipoMat = Tipomatricula::all();
 
-        return view('DatosAcademicos.DatosAcademicos', compact('ultimo','facultad', 'beca', 'tipoMat'));
+        return view('DatosAcademicos.DatosAcademicos');
     }
 
     /**
@@ -35,6 +31,13 @@ class DatosAcademicosController extends Controller
      */
     public function create(Request $data)
     {
+        $IdDatosGenerales = $data->input('IdDatosgenerales');
+        $datosGenerales = DatosGenerales::all();
+        foreach($datosGenerales as $datosg){
+            if($datosg->id == $IdDatosGenerales){
+                $id = $datosg;
+            }
+        }
         $datos = DatosAcademicos::create([
             'IdDatosgenerales' => $data->input('IdDatosgenerales'),
             'IdFacultad' => $data->input('IdFacultad'),
@@ -43,7 +46,8 @@ class DatosAcademicosController extends Controller
             'IdTipomatricula' => $data->input('IdTipomatricula'),
             'IdBecado' => $data->input('IdBecado'),
         ]);
-        return view('DatosAcademicos.DatosAcademicos');
+        // return view('Preguntas.Preguntas', compact('IdDatosGenerales'))
+        return app(preguntaController::class)->index($id);
       
     }
 

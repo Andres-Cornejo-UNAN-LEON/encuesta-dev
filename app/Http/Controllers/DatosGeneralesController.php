@@ -9,6 +9,9 @@ use App\Models\sexo;
 use App\Models\departamento;
 use App\Models\municipio;
 use Illuminate\Http\Request;
+use App\Models\Facultad;
+use App\Models\Becado;
+use App\Models\Tipomatricula;
 
 class DatosGeneralesController extends Controller
 {
@@ -42,7 +45,13 @@ class DatosGeneralesController extends Controller
             'IdDepartamento' => $data->input('IdDepartamento'),
             'IdMunicipio' => $data->input('IdMunicipio'),
         ]);
-        return view('DatosAcademicos.DatosAcademicos');
+        $facultad = Facultad::all();
+        $beca = Becado::all();
+        $tipoMat = Tipomatricula::all();
+        $nombreCompleto = $datos->nombre.' '.$datos->apellido;
+        $cedula = $datos->cedula;
+
+        return view('DatosAcademicos.DatosAcademicos', compact('datos','nombreCompleto','cedula','facultad','beca', 'tipoMat'));
     }
 
     /**

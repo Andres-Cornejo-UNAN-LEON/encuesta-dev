@@ -1,0 +1,29 @@
+.container{
+    h1{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .card_preguntas{
+        margin:30px;
+        display: flex;
+        justify-content: left;
+    }
+    .form-control{
+        display: flex;
+        flex-direction: column;
+        input, select{
+            width: 50%;
+        }
+    }
+}
+
+.tabla{
+    background-color: #ffffff;
+    
+    th{
+        background-color: #16a085;
+    }
+    tr, td, th{
+        border:1px solid #bdc3c7;
+        padding: 10px;
+    }
+}
