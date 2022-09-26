@@ -11,7 +11,6 @@ use App\Http\Controllers\municipioController;
 use App\Http\Controllers\preguntaController;
 use App\Models\DatosAcademicos;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,3 +51,11 @@ Route::get('/pregunta', [preguntaController::class, 'index']);
 Route::post('/DatosGenerales', [DatosGeneralesController::class, 'create'])->name('DatosGenerales.create');
 
 Route::post('/DatosAcademicos', [DatosAcademicosController::class, 'create'])->name('DatosAcademicos.create');
+
+Route::post('/pregunta/create',[preguntaController::class, 'create'])->name('Pregunta.create');
+
+Route::get('/pregunta/crear',[preguntaController::class, 'crearPregunta']);
+
+Route::get('/pregunta/show',[preguntaController::class, 'show'])->name('Pregunta.show');
+
+Route::post('/pregunta/find',[preguntaController::class, 'find'])->name('Pregunta.find');

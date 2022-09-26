@@ -35,11 +35,11 @@
         </span>
         @if (Auth::check())
             @if (Auth::user()->admin)
-                <form action="" method="post">@csrf
+                <form action="{{ route('Pregunta.find') }}" method="post">@csrf
                     <input type="text" placeholder="Buscar una pregunta" name="search_question" id="search-question">
                 </form>
                 <div class="row">
-                    <a href="#">Preguntas</a>
+                    <a href="{{ route('Pregunta.show') }}">Preguntas</a>
                 </div>
             @endif
             <div class="row">

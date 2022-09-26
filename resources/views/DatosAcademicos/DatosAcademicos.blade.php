@@ -1,10 +1,11 @@
-
+@extends('layouts.principal')
 
 @vite(['resources/js/jquery/jquery-3.6.1.min.js','resources/js/datosAcademicos/datosAcademicos.js'])
-
+@section('content')
 <div class="form-datosGenerales">
+    <h1>Ingrese sus Datos Academicos</h1>
     <form action="{{ route('DatosAcademicos.create') }}" method="POST" class="formulario" >@csrf
-        <input type="text" name="IdDatosgenerales" value="{{$ultimo->id}}">
+        <input type="text" name="IdDatosgenerales" value="{{$datos->id}}" class="iddatos">
         <div class="form-control">
             <label for="IdFacultad">Facultad</label>
             <select name="IdFacultad" id="IdFacultad" required>
@@ -42,9 +43,11 @@
                 @endforeach
             </select>
         </div>
+        <div class="botones">
+        <input type="submit" value="Siguiente" name="siguiente" class="boton-siguiente">
+        </div>
         
-        <input type="submit" value="Siguiente" name="siguiente">
     </form>
 </div>
-
+@endsection
 @vite(['resources/js/app.js'])
