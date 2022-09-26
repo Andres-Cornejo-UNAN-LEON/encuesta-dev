@@ -27,3 +27,29 @@
         padding: 10px;
     }
 }
+
+
+
+.form-preguntas{
+    width: 100%;
+    .formulario{
+        .form-control_{
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            input, select{
+                width: 80%;
+                border-radius: 12px;
+                border:1px solid #000000;
+            }
+        }
+    }
+}
+
+.enlace-boton{
+    text-decoration: none;
+    color:#ffffff;
+    background-color: #3498db;
+    padding: 5px 10px;
+}

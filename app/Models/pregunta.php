@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class pregunta extends Model
 {
     use HasFactory;
-    Protected $fillable = ["nombre", "Tipopregunta"];
+    Protected $fillable = ["pregunta", "Tipopregunta"];
     
     public function encuesta(){
         return $this->hasmany(ResultadoEncuesta::class, "IdPregunta");

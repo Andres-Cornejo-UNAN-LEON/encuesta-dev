@@ -149,4 +149,39 @@ class preguntaController extends Controller
 
         return view('Preguntas.listaPregunta', compact('listaDatos'));
     }
+
+    public function save(Request $request){
+
+        $datos = pregunta::create([
+            'pregunta' => $request->input('pregunta'),
+            'Tipopregunta' => $request->input('tipoPregunta')
+        ]);
+
+        return app(preguntaController::class)->show();
+    }
+
+    public function formRegistro(){
+        $opciones = new TipoPregunta();
+        $listaDatos = $opciones->opciones();
+
+        return view('Preguntas.registro', compact('listaDatos'));
+    }
+
+    public function editar($id){
+        $opciones = new TipoPregunta();
+        $listaDatos = $opciones->opciones();
+
+        $pregunta = pregunta::where('id',$id)->get();
+
+        return view('Preguntas.editar', compact('pregunta','listaDatos'));
+    }
+
+    public function modificar(Request $request){
+      
+
+        $datos = pregunta::where('id', $request->input('id'))
+      ->update([ 'pregunta' => $request->input('pregunta'), 'Tipopregunta'=> $request->input('tipoPregunta')]);
+
+        return app(preguntaController::class)->show();
+    }
 }

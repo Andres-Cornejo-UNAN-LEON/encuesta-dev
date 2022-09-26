@@ -22,9 +22,14 @@
                         {{$datos->Tipopregunta}}
                     </p>
                 </td>
+                <td>
+                    <a href="{{ route('Pregunta.editar', ['id'=>$datos->id]) }}" class="enlace-boton">Editar</a>
+                  <br>
+                </td>
             </tr>
         @endforeach
     </table>
+    <a href="{{ route('Pregunta.registro') }}" class="enlace-boton">Agregar pregunta</a>
 </div>
 
  @endsection
