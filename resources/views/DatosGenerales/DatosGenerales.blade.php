@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Generales</title>
-
+    @vite(['resources/js/jquery/jquery-3.6.1.min.js','resources/js/datosGenerales/datosGenerales.js'])
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="cuerpo-generales">
 
-@vite(['resources/js/jquery/jquery-3.6.1.min.js','resources/js/datosGenerales/datosGenerales.js'])
+
 <div class="_container">
     <h1>Ingresar Datos Generales</h1>
     <div class="form-datosGenerales">
