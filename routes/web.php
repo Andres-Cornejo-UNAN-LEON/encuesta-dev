@@ -59,3 +59,12 @@ Route::get('/pregunta/crear',[preguntaController::class, 'crearPregunta']);
 Route::get('/pregunta/show',[preguntaController::class, 'show'])->name('Pregunta.show');
 
 Route::post('/pregunta/find',[preguntaController::class, 'find'])->name('Pregunta.find');
+
+Route::post('/pregunta/save',[preguntaController::class,'save'])->name('Pregunta.save');
+
+Route::get('/pregunta/registro',[preguntaController::class,'formRegistro'])->name('Pregunta.registro');
+
+Route::get('/pregunta/editar/{id}',[preguntaController::class,'editar'])->name('Pregunta.editar');
+
+
+Route::post('/pregunta/modificar',[preguntaController::class,'modificar'])->name('Pregunta.modificar');
