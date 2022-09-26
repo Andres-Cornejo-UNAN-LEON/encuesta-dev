@@ -13,8 +13,8 @@ class TipoPregunta extends Model{
             0=> 'categoria',
             1=> 'tiempo',
             2=> 'comodidad',
-            3=> 'informacion',
-            4=> 'texto'
+            3=> 'info',
+            4=> 'insertar'
         ];
         return $array;
     }
