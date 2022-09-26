@@ -1,0 +1,12 @@
+#tarjeta_finalizacion{
+    border: solid 2px $color-verde;
+    background-color: $color-azul;
+    width: 30%;
+    height: 20vh;
+    color: $color-blanco;
+    margin: 30vh auto;
+    text-align: center;
+    h3{
+        line-height: 10vh;
+    }
+}

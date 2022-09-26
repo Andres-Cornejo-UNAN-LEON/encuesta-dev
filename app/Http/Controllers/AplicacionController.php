@@ -33,12 +33,14 @@ class AplicacionController extends Controller
         $preguntas = array();
         $datos = array();
         foreach($listPreguntas as $item){
-            $preguntas[] = $item->pregunta;
+            if(sizeof(ResultadoEncuesta::where("IdPregunta", $item->id)->get())!=0){
+                $preguntas[] = $item->pregunta;
+            }
         }
-        for($i=1; $i<=sizeof($preguntas); $i++){
+        foreach($listPreguntas as $item){
             $datos = array();
-            for($j=0; $j<10; $j++){
-                $datos[] = ResultadoEncuesta::where("IdPregunta", $i)->get()[$j]->Respuesta;
+            for($j=0; $j<sizeof(ResultadoEncuesta::where("IdPregunta", $item->id)->get()); $j++){
+                $datos[] = ResultadoEncuesta::where("IdPregunta", $item->id)->get()[$j]->Respuesta;
             }
             $respuestas[] = array_count_values($datos);
         }

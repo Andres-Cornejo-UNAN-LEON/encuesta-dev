@@ -24,7 +24,6 @@ class preguntaController extends Controller
 
     public function create(Request $request){
        
-        $i=1;
         $listaPreguntas = pregunta::all();
 
         foreach($listaPreguntas as $lista){
@@ -32,14 +31,12 @@ class preguntaController extends Controller
             $idPregunta = $lista->id;
 
             $datos = ResultadoEncuesta::create([
-                'Respuesta' => $request->input('respuesta'.$i),
+                'Respuesta' => $request->input('respuesta'.$lista->id),
                 'IdEncuestado' => $idEncuestado,
                 'IdPregunta' => $idPregunta
             ]);
-
-            $i++;
         }
-
+        return view('finalizacion');
     }
 
     /**
@@ -142,6 +139,12 @@ class preguntaController extends Controller
         $listaDatos = pregunta::all();
 
         return view('Preguntas.listaPregunta', compact('listaDatos'));
+    }
+
+    public function delete($id){
+        $valor = pregunta::where('id', $id)->get();
+        $valor[0]->delete();
+        return redirect('/pregunta/show');
     }
 
     public function find(Request $request){

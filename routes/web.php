@@ -24,15 +24,7 @@ use App\Models\DatosAcademicos;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/layout-main', function(){
-    return view('layouts.principal');
-});
-
-Route::get('/layout-main/prueba', function(){
-    return view('prueba');
+    return redirect('login');
 });
 
 Auth::routes();
@@ -42,8 +34,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('DatosGenerales', DatosGeneralesController::class);
 
 Route::resource('DatosAcademicos', DatosAcademicosController::class);
-
-Route::get('/prueba', [ResultadoEncuestaController::class, 'index']);
 
 Route::get('/municipio/show/{IdDepartamento}', [municipioController::class,'show']);
 
@@ -74,5 +64,6 @@ Route::get('/pregunta/registro',[preguntaController::class,'formRegistro'])->nam
 
 Route::get('/pregunta/editar/{id}',[preguntaController::class,'editar'])->name('Pregunta.editar');
 
+Route::get('/pregunta/delete{id}', [preguntaController::class,'delete']);
 
 Route::post('/pregunta/modificar',[preguntaController::class,'modificar'])->name('Pregunta.modificar');

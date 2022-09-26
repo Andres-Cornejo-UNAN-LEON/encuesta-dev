@@ -9,11 +9,11 @@
     <div class="form-control_">
                 <label for="id">Id</label>
                 <input type="text" name="id" placeholder="id" required class="pregunta" value="{{$dato->id}}" readonly>
-</div> 
+    </div> 
         <div class="form-control_">
                 <label for="Pregunta">Pregunta</label>
                 <input type="text" name="pregunta" placeholder="pregunta" required class="pregunta" value="{{$dato->pregunta}}">
-</div> 
+    </div> 
 <div class="form-control_">
 <label for="TipoPregunta">Tipo de pregunta</label>
                 <select name="tipoPregunta" id="TipoPregunta" class="pregunta" required>
@@ -28,7 +28,7 @@
             </div>
     </form>
     </div>
-    
+    <a href="/pregunta/delete{{$pregunta[0]->id}}" class="enlace-boton">Eliminar pregunta</a>
     </div>
     
 </div>
