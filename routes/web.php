@@ -44,10 +44,10 @@ Route::post('/DatosGenerales', [DatosGeneralesController::class, 'create'])->nam
 Route::post('/DatosAcademicos', [DatosAcademicosController::class, 'create'])->name('DatosAcademicos.create');
 
 Route::controller(AplicacionController::class)->group(function(){
-    Route::get('/graficas', 'graficas');
-    Route::get('/reporte', 'informe');
-    Route::get('/download/Excel/Encuesta', 'exportEncuesta');
-    Route::get('/download/Excel/Encuestados', 'exportEncuestados');
+    Route::get('/graficas', 'graficas')->middleware('auth');
+    Route::get('/reporte', 'informe')->middleware('auth');
+    Route::get('/download/Excel/Encuesta', 'exportEncuesta')->middleware('auth');
+    Route::get('/download/Excel/Encuestados', 'exportEncuestados')->middleware('auth');
 });
 
 Route::post('/pregunta/create',[preguntaController::class, 'create'])->name('Pregunta.create');
@@ -64,6 +64,6 @@ Route::get('/pregunta/registro',[preguntaController::class,'formRegistro'])->nam
 
 Route::get('/pregunta/editar/{id}',[preguntaController::class,'editar'])->name('Pregunta.editar');
 
-Route::get('/pregunta/delete{id}', [preguntaController::class,'delete']);
+Route::get('/pregunta/delete{id}', [preguntaController::class,'delete'])->middleware('auth');
 
-Route::post('/pregunta/modificar',[preguntaController::class,'modificar'])->name('Pregunta.modificar');
+Route::post('/pregunta/modificar',[preguntaController::class,'modificar'])->name('Pregunta.modificar')->middleware('auth');

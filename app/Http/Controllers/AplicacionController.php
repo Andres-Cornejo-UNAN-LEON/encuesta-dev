@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\DatosAcademicos;
 use App\Exports\DatosEncuestaExport;
 use App\Exports\PersonasEncustadasExport;
+use App\Http\Middleware\Authenticate;
 use App\Models\pregunta;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\ResultadoEncuesta;
@@ -23,6 +24,9 @@ class AplicacionController extends Controller
     }
     public function informe()
     {
+        if(!Auth::check()){
+            return redirect('login');
+        }
         return view('reporte.reporte');
     }
     public function graficas(){
@@ -47,9 +51,15 @@ class AplicacionController extends Controller
         return view('reporte.graficas')->with("preguntas", json_encode($preguntas))->with("respuestas", json_encode($respuestas));
     }
     public function exportEncuesta(){
+        if(!Auth::check()){
+            return redirect('login');
+        }
         return Excel::download(new DatosEncuestaExport, 'Datos encuesta.xlsx');
     }
     public function exportEncuestados(){
+        if(!Auth::check()){
+            return redirect('login');
+        }
         return Excel::download(new PersonasEncustadasExport, 'Datos personales encuestados.xlsx');
     }
 }
