@@ -52,7 +52,7 @@ Route::controller(AplicacionController::class)->group(function(){
     Route::get('/download/Excel/Encuestados', 'exportEncuestados')->middleware('auth');
 });
 
-Route::post('/pregunta/create',[preguntaController::class, 'create'])->name('Pregunta.create')->middleware('auth');
+Route::post('/pregunta/create',[preguntaController::class, 'create'])->name('Pregunta.create');
 
 Route::get('/pregunta/crear',[preguntaController::class, 'crearPregunta'])->middleware('auth');
 
