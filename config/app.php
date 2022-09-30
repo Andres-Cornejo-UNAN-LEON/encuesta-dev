@@ -209,7 +209,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        // Libreria para exportar excel
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 

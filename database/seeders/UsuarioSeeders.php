@@ -47,9 +47,18 @@ class UsuarioSeeders extends Seeder
                 "created_at" => new DateTime(),
                 "updated_at" => new DateTime()
             ],
+            [
+                "name" => "Usuario Rol Administrador Prueba",
+                "email" => "usuario@admin.com",
+                "email_verified_at" => new DateTime(),
+                "admin" => 1,
+                "password" => Hash::make("passwd1234"),
+                "created_at" => new DateTime(),
+                "updated_at" => new DateTime()
+            ],
             [   //Usuario Invitado(Para pruebas)
-                "name" => "Usuario prueba",
-                "email" => "usuarioprueba@gmail.com",
+                "name" => "Usuario Rol Invitado Prueba",
+                "email" => "usuario@invite.com",
                 "email_verified_at" => new DateTime(),
                 "admin" => 0,
                 "password" => Hash::make("passwd1234"),

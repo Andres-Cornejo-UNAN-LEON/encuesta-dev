@@ -31,9 +31,6 @@ class AplicacionController extends Controller
     }
     public function graficas(){
         $listPreguntas = pregunta::all();
-        // Numero de preguntas
-        $cantidad = sizeof($listPreguntas);
-        // Preguntas
         $preguntas = array();
         $datos = array();
         foreach($listPreguntas as $item){

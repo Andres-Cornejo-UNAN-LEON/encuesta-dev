@@ -46,23 +46,25 @@ Route::post('/DatosAcademicos', [DatosAcademicosController::class, 'create'])->n
 Route::controller(AplicacionController::class)->group(function(){
     Route::get('/graficas', 'graficas')->middleware('auth');
     Route::get('/reporte', 'informe')->middleware('auth');
+    //          Excel para la tabla de Resultado de encuesta
     Route::get('/download/Excel/Encuesta', 'exportEncuesta')->middleware('auth');
+    //          Excel para la tabla encuestados
     Route::get('/download/Excel/Encuestados', 'exportEncuestados')->middleware('auth');
 });
 
-Route::post('/pregunta/create',[preguntaController::class, 'create'])->name('Pregunta.create');
+Route::post('/pregunta/create',[preguntaController::class, 'create'])->name('Pregunta.create')->middleware('auth');
 
-Route::get('/pregunta/crear',[preguntaController::class, 'crearPregunta']);
+Route::get('/pregunta/crear',[preguntaController::class, 'crearPregunta'])->middleware('auth');
 
-Route::get('/pregunta/show',[preguntaController::class, 'show'])->name('Pregunta.show');
+Route::get('/pregunta/show',[preguntaController::class, 'show'])->name('Pregunta.show')->middleware('auth');
 
-Route::post('/pregunta/find',[preguntaController::class, 'find'])->name('Pregunta.find');
+Route::post('/pregunta/find',[preguntaController::class, 'find'])->name('Pregunta.find')->middleware('auth');
 
-Route::post('/pregunta/save',[preguntaController::class,'save'])->name('Pregunta.save');
+Route::post('/pregunta/save',[preguntaController::class,'save'])->name('Pregunta.save')->middleware('auth');
 
-Route::get('/pregunta/registro',[preguntaController::class,'formRegistro'])->name('Pregunta.registro');
+Route::get('/pregunta/registro',[preguntaController::class,'formRegistro'])->name('Pregunta.registro')->middleware('auth');
 
-Route::get('/pregunta/editar/{id}',[preguntaController::class,'editar'])->name('Pregunta.editar');
+Route::get('/pregunta/editar/{id}',[preguntaController::class,'editar'])->name('Pregunta.editar')->middleware('auth');
 
 Route::get('/pregunta/delete{id}', [preguntaController::class,'delete'])->middleware('auth');
 
